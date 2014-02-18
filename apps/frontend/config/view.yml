@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css,grid.css,ie.css,prettyPhoto.css,reset.css,style.css, /pmSuperfishMenuPlugin/css/superfish.css]
+
+  javascripts:    [jquery-1.4.2.min.js, /pmSuperfishMenuPlugin/js/hoverIntent.js, /pmSuperfishMenuPlugin/js/superfish.js,cufon-replace.js,loadwindow.js,cufon-yui.js,easyTooltip,FF-cash,hover-image,html5,jquery.easing.1.3,jquery.galleriffic,jquery.opacityrollover,jquery.prettyPhoto,jquery-1.6.3.min,script,tms_presets,tms-0.3,Vegur_400.font,Vegur_700.font]
+
+  has_layout:     true
+  layout:         layout

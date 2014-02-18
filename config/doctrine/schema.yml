@@ -1,0 +1,127 @@
+Artist:
+ actAs: [Timestampable]
+ tableName: artist_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  artist_nm: string(255)
+  real_nm: string(255)
+  dob: date
+  country_id: integer
+ relations:
+  Country:
+   onDelete: CASCADE
+   foreignAlias: country_id
+Song:
+ actAs: [Timestampable]
+ tableName: song_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  album_id: integer
+  genre_id: integer
+  song_nm: string(255)
+  music: blob
+ relations:
+  Album:
+   onDelete: CASCADE
+   foreignAlias: album_id
+  Genre:
+   onDelete: CASCADE
+   foreignAlias: genre_id
+Country:
+ actAs: [Timestampable]
+ tableName: country_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  country_nm: string(255)
+Album:
+ actAs: [Timestampable]
+ tableName: album_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  album_nm: string(255)
+  artist_id: integer
+  release_dt: date
+ relations:
+  Artist:
+   onDelete: CASCADE
+   foreignAlias: artist_id
+Features:
+ actAs: [Timestampable]
+ tableName: features_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  song_id: integer
+  artist_id: integer
+ relations:
+  Song:
+   onDelete: CASCADE
+   foreignAlias: song_id
+  Artist:
+   onDelete: CASCADE
+   foreignAlias: artist_id
+Story:
+ actAs: [Timestampable]
+ tableName: story_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  title: string(50)
+  story: string(255)
+  artist_id: integer
+ relations:
+  Artist:
+   onDelete: CASCADE
+   foreignAlias: artist_id
+Playlist:
+ actAs: [Timestampable]
+ tableName: playlist_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  name: string(50)
+Genre:
+ actAs: [Timestampable]
+ tableName: genre_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  name: string(50)
+PlaylistSong:
+ actAs: [Timestampable]
+ tableName: playlist_song_tb
+ columns:
+  id:
+   type: integer
+   primary: true
+   autoincrement: true
+  playlist_id: integer
+  song_id: integer
+ relations:
+  Song:
+   onDelete: CASCADE
+   foreignAlias: song_id
+  Playlist:
+   onDelete: CASCADE
+   foreignAlias: playlist_id
+  

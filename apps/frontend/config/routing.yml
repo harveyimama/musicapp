@@ -1,0 +1,115 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+
+create:
+  url:   /:module/create
+  param: { action: create }
+  
+  
+create2:
+  url:   /:module/create2 
+  param: { action: create2 }
+
+update2:
+  url:   /:module/update2 
+  param: { action: update2 }
+  
+update:
+  url:   /:module/update/:id
+  param: {  action: update }
+  
+delete:
+  url:   /:module/delete/:id
+  param: {  action: delete }
+  
+mydelete:
+  url:   /:module/deleteartist/:id
+  param: {  action: deleteartist }
+
+new:
+  url:   /:module/new
+  param: {action: new }
+  
+song:
+  url:   /song/index
+  param: { module: song, action: index }
+
+album:
+  url:   /album/index
+  param: { module: album, action: index }
+  
+playlist:
+  url:   /playlist/index
+  param: { module: playlist, action: index }
+
+albumdel:
+  url:   /album/indexdel/:artist_id
+  param: { module: album, action: indexdel }
+  
+features:
+  url:   /features/index/:id
+  param: { module: features, action: index }
+  
+featuresid:
+  url:   /features/:action/:id
+  param: { module: features }
+  
+playlistid:
+  url:   /playlist/:action/:id
+  param: { module: playlist }
+  
+  
+playlistsongid:
+  url:   /playlistsong/:action/:id
+  param: { module: playlistsong }
+  
+albumid:
+  url:   /album/:action/:id
+  param: { module: album }
+  
+story:
+  url:   /story/index
+  param: { module: story, action: index }
+  
+storyid:
+  url:   /story/:action/:id
+  param: { module: story }
+
+sort:
+  url:   /:module/:action/:sort/:sort_type 
+  
+addfeature:
+  url:   /features/new/:id
+  param: { module: features, action: new  }
+  
+addalbum:
+  url:   /album/newbyid
+  param: { module: album, action: newbyid  }
+  
+pagenation:
+  url:   /:module/:page 
+  param: { action: index  }
+   
+songid:
+  url:   /song/:action/:id
+  param: { module: song}
+  
+artistid:
+  url:   /artist/:action/:id
+  param: { module: artist}
+ 
+  
+# default rules
+homepage:
+  url:   /
+  param: { module: artist, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
